@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+        <link rel="stylesheet" href="/lit/static/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/lit/static/js/jquery-3.1.0.min.js"></script>
+        <title>Get Lit</title>
+    </head>
+    <body>
+        <div style="margin: 0 12px;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+        <h1>Get Lit</h1>
+        <h2>Load up on swag and merchandise from your favorite Spotify artists!</h2>
+        {% if in %}
+            {% if txt|length > 0 %}
+                <h4> {{txt}} </h4>
+            {% endif %}
+            {% for prod4 in items|batch(4) %}
+                <div class="pure-g">
+                    {% for prod in prod4 %}
+                    <div class="pure-u-sm-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <a href={{prod[2]}} style="padding:4px;">
+                            <h4>{{prod[0]}}</h4>
+                            <img src={{prod[1]}} href={{prod[2]}}>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <a href="/lit/login">
+                <div class="pure-button pure-button-primary pure-u-1">
+                    <h1>Find me shit!</h1>
+                </div>
+            </a>
+        {% endif %}
+        </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,5 @@
+*.py[ocd]
+*.ini
+*.swp
+/__pycache__
+/venv
