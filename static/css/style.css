@@ -24,17 +24,3 @@ h4 {
 body {
     font-family: Source Sans Pro,Helvetica,Arial,sans-serif
 }
-
-input {
-    margin: 0 auto;
-}
-
-fieldset {
-    margin: 0;
-    border-width: 0;
-}
-
-input[type='file'] {
-    color: transparent;
-    width: 200px;
-}
